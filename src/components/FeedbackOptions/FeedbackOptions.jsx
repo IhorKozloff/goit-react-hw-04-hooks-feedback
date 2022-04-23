@@ -1,10 +1,12 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { BtnList, BtnItem, Btn} from 'components/FeedbackOptions/FeedbackOptions.styled';
+
 
 export const FeedbackOptions = ({onGoodFeedbackBtn, onNeutralFeedbackBtn, onBadFeedbackBtn}) => {
     
     return (
         <BtnList className="btn-list">
-           
            <BtnItem className="btn-item">
                 <Btn className="btn good" type="button" onClick={() => {
                     onGoodFeedbackBtn()
@@ -21,19 +23,12 @@ export const FeedbackOptions = ({onGoodFeedbackBtn, onNeutralFeedbackBtn, onBadF
                 }}>Bad</Btn> 
             </BtnItem> 
         </BtnList>
-        // <BtnList className="btn-list">
-           
-        //     {options.map(item => {
-               
-        //         return (
-        //             <BtnItem key={item} className="btn-item">
-        //                 <Btn key={item} className="btn" type="button" onClick={() => {
-        //                     onLeaveFeedback(item);
-        //                 }}>{item.replace(item[0], item[0].toUpperCase())}</Btn> 
-        //             </BtnItem>  
-        //         )
-        //     })}
-        // </BtnList>
-        
     );
+};
+
+
+FeedbackOptions.propTypes = {
+    onGoodFeedbackBtn: PropTypes.func.isRequired,
+    onNeutralFeedbackBtn: PropTypes.func.isRequired,
+    onBadFeedbackBtn: PropTypes.func.isRequired
 };
